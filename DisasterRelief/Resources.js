@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, Image, StyleSheet, Platform } from 'react-native';
 
-export default class Donate extends Component {
+export default class Resources extends Component {
 
   constructor(props) {
     super(props);
@@ -28,7 +28,7 @@ export default class Donate extends Component {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.title}>DONATE</Text>
+                <Text style={styles.title}>RESOURCES</Text>
             </View>
             {/*Each button will call the press function with a different action name*/}
             <TouchableHighlight onPress={() => this.press('Organization1')} style={styles.outerButton}>

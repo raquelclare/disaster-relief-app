@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, Image, StyleSheet, Platform } from 'react-native';
 
-export default class Donate extends Component {
+export default class Volunteer extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       loading: true
-    //   movie: ''
+    //   organization: ''
     };
     this.handlePress = this.handlePress.bind(this);
   }
@@ -28,12 +28,12 @@ export default class Donate extends Component {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.title}>{this.props.name}</Text>
+                <Text style={styles.title}>VOLUNTEER</Text>
             </View>
             {/*Each button will call the press function with a different action name*/}
             <TouchableHighlight onPress={() => this.press('Organization1')} style={styles.outerButton}>
                 <View style={styles.innerButton}>
-                    <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 1</Text></Text>
+                    <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORGANIZATION 1</Text></Text>
                 </View>
             </TouchableHighlight>
             <TouchableHighlight onPress={() => this.press('Organization2')} style={styles.outerButton}>
@@ -50,7 +50,7 @@ export default class Donate extends Component {
             <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
                 <TouchableHighlight onPress={this.handlePress} style={{width:100}}>
                 <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
-                    <Text style={{color: 'rgba(76,217,175,1)', fontWeight: 'bold'}}>Go Back</Text>
+                    <Text style={{color: 'rgba(12,65,123,1)', fontWeight: 'bold'}}>Go Back</Text>
                 </View>
                 </TouchableHighlight>
           </View>
@@ -62,7 +62,7 @@ export default class Donate extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgba(76,217,175,1)'
+    backgroundColor: 'rgb(192,192,192)'
   },
   infoTextContainer: {
     flexDirection: 'column', 
@@ -102,11 +102,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#35977a',
+    backgroundColor: '#fff',
     height: 50,
   },
   title: {
-    color: '#fff6d1',
+    color: 'rgb(12,65,123)',
     fontSize: 25,
     fontWeight: 'bold'
   }

@@ -4,9 +4,23 @@ import { View, Text, TouchableHighlight, StyleSheet, Dimensions, Platform } from
 export default class Home extends Component {
 
   // The press function takes in an argument (action name) and pushes to the navigator the individual action page
-  press(action) {
+  pressDonate(action) {
     this.props.navigator.push({ 
       id: 2
+      // We can pass any information we want to the next scene as props
+    });
+  }
+
+  pressVolunteer(action) {
+    this.props.navigator.push({ 
+      id: 4
+      // We can pass any information we want to the next scene as props
+    });
+  }
+
+  pressResources(action) {
+    this.props.navigator.push({ 
+      id: 5
       // We can pass any information we want to the next scene as props
     });
   }
@@ -16,17 +30,17 @@ export default class Home extends Component {
       <View style={styles.container}>
         <Text style={styles.title}>dsstr rlf</Text>
         {/*Each button will call the press function with a different action name*/}
-        <TouchableHighlight onPress={() => this.press('Donate')} style={styles.outerButton}>
+        <TouchableHighlight onPress={() => this.pressDonate('Donate')} style={styles.outerButton}>
           <View style={styles.innerButton}>
             <Text style={styles.actionText}><Text style={{color:'#fff'}}>Places I Can Donate To</Text></Text>
           </View>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => this.press('Volunteer')} style={styles.outerButton}>
+        <TouchableHighlight onPress={() => this.pressVolunteer('Volunteer')} style={styles.outerButton}>
           <View style={styles.innerButton}>
             <Text style={styles.actionText}><Text style={{color:'#fff'}}>Places I Can Volunteer At</Text></Text>
           </View>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => this.press('Resources')} style={styles.outerButton}>
+        <TouchableHighlight onPress={() => this.pressResources('Resources')} style={styles.outerButton}>
           <View style={styles.innerButton}>
             <Text style={styles.actionText}><Text style={{color:'#fff'}}>Resources</Text></Text>
           </View>

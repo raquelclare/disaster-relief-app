@@ -15,6 +15,7 @@ import Home from './Home';
 import Splash from './Splash';
 import Donate from './Donate';
 import Volunteer from './Volunteer';
+import Resources from './Resources';
 
 class DisasterRelief extends Component {
 
@@ -31,6 +32,9 @@ class DisasterRelief extends Component {
     }
     else if (route.id === 4) {
       return <Volunteer navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 5) {
+      return <Resources navigator={navigator} {...route.passProp} />
     }
   }
 
