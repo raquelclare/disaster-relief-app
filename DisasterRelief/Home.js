@@ -28,14 +28,15 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>dsstr rlf</Text>
+        <Text style={styles.title}>ndre<Text style={{color:'blue'}}>.</Text></Text>
+        <Text style={{textAlign:'center'}}>National Disaster Relief Education</Text>
         {/*Each button will call the press function with a different action name*/}
         <TouchableHighlight onPress={() => this.pressDonate('Donate')} style={styles.outerButton}>
           <View style={styles.innerButton}>
-            <Text style={styles.actionText}><Text style={{color:'#fff'}}>Places I Can Donate To</Text></Text>
+            <Text style={styles.actionText}><Text style={{color:'#fff'}}>DONATE</Text></Text>
           </View>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => this.pressVolunteer('Volunteer')} style={styles.outerButton}>
+        {/*<TouchableHighlight onPress={() => this.pressVolunteer('Volunteer')} style={styles.outerButton}>
           <View style={styles.innerButton}>
             <Text style={styles.actionText}><Text style={{color:'#fff'}}>Places I Can Volunteer At</Text></Text>
           </View>
@@ -44,7 +45,7 @@ export default class Home extends Component {
           <View style={styles.innerButton}>
             <Text style={styles.actionText}><Text style={{color:'#fff'}}>Resources</Text></Text>
           </View>
-        </TouchableHighlight>
+        </TouchableHighlight>*/}
       </View>
     );
   }

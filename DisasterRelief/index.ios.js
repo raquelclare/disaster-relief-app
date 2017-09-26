@@ -16,6 +16,10 @@ import Splash from './Splash';
 import Donate from './Donate';
 import Volunteer from './Volunteer';
 import Resources from './Resources';
+// Organization vetted - these file names should be updated with the actual name of the organization as we add them
+import Org1 from './Charities/Org1';
+import Org2 from './Charities/Org2';
+import Org3 from './Charities/Org3';
 
 class DisasterRelief extends Component {
 
@@ -35,6 +39,15 @@ class DisasterRelief extends Component {
     }
     else if (route.id === 5) {
       return <Resources navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 6) {
+      return <Org1 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 7) {
+      return <Org2 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 8) {
+      return <Org3 navigator={navigator} {...route.passProp} />
     }
   }
 

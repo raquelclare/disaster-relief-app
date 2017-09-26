@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, Image, StyleSheet, Platform } from 'react-native';
+import { View, Text, TouchableHighlight, Image, StyleSheet, Dimensions, Platform } from 'react-native';
 
 export default class Donate extends Component {
 
@@ -10,6 +10,24 @@ export default class Donate extends Component {
     //   organization: ''
     };
     this.handlePress = this.handlePress.bind(this);
+  }
+
+  pressOrg1(charity) {
+    this.props.navigator.push({ 
+      id: 6
+    });
+  }
+
+  pressOrg2(charity) {
+    this.props.navigator.push({ 
+      id: 7
+    });
+  }
+
+  pressOrg3(charity) {
+    this.props.navigator.push({ 
+      id: 8
+    });
   }
 
   // When the component mounts..
@@ -28,24 +46,29 @@ export default class Donate extends Component {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.title}>DONATE</Text>
+                <Text style={styles.title}>CHARITIES</Text>
             </View>
-            {/*Each button will call the press function with a different action name*/}
-            <TouchableHighlight onPress={() => this.press('Organization1')} style={styles.outerButton}>
+            {/*--------SEARCH BAR TO GO HERE---------*/}
+            <Text style={styles.smallInfoText}>LOCAL</Text>
+            {/*Each button will call the press function with a different charity/organization name*/}
+            <TouchableHighlight onPress={() => this.pressOrg1('Organization1')} style={styles.outerButton}>
                 <View style={styles.innerButton}>
                     <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 1</Text></Text>
                 </View>
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.press('Organization2')} style={styles.outerButton}>
+            <Text style={styles.smallInfoText}>NON-LOCAL</Text>
+            <TouchableHighlight onPress={() => this.pressOrg2('Organization2')} style={styles.outerButton}>
                 <View style={styles.innerButton}>
                     <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 2</Text></Text>
                 </View>
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.press('Organization3')} style={styles.outerButton}>
+            <Text style={styles.smallInfoText}>GLOBAL NON-USA</Text>
+            <TouchableHighlight onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
                 <View style={styles.innerButton}>
                     <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
                 </View>
             </TouchableHighlight>
+            <Text style={styles.smallInfoText}>GLOBAL</Text>
 
             <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
                 <TouchableHighlight onPress={this.handlePress} style={{width:100}}>
@@ -81,7 +104,8 @@ const styles = StyleSheet.create({
   },
   smallInfoText: {
     color: 'white', 
-    fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light'
+    fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
+    textAlign:'center'
   },
   bigLightText: {
     color: 'white', 
@@ -104,10 +128,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     height: 50,
+    marginBottom: 40
   },
   title: {
     color: 'rgb(12,65,123)',
     fontSize: 25,
     fontWeight: 'bold'
+  },
+  outerButton: {
+    paddingVertical: 3,
+    paddingHorizontal: 30
+  },
+  innerButton: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: 'rgb(80,80,80)',
+    borderLeftWidth: 5,
+    borderColor: 'rgb(0,0,0)'
   }
 });
