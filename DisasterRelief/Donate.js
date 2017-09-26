@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, Image, StyleSheet, Dimensions, Platform } from 'react-native';
+import { View, Text, TouchableHighlight, TouchableOpacity, Image, StyleSheet, Dimensions, Platform } from 'react-native';
+import SearchBar from 'react-native-searchbar'
+
+const items = [
+  'Neighborhood Health Clinic',
+  'Heart of Florida United Way',
+  'United Way of Miami-Dade'
+]
 
 export default class Donate extends Component {
 
+  //added items and results
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
+      items,
+      results: []
     //   organization: ''
     };
     this.handlePress = this.handlePress.bind(this);
+  }
+
+  //to handle results for the search bar
+  _handleResults(results) {
+    this.setState({ results });
   }
 
   pressOrg1(charity) {
@@ -39,46 +54,60 @@ export default class Donate extends Component {
   // The handlePress function will return us to the previous page
   handlePress() {
     this.props.navigator.pop();
-  }
+  } 
+
+
 
   render() {
 
     return (
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.title}>CHARITIES</Text>
-            </View>
-            {/*--------SEARCH BAR TO GO HERE---------*/}
-            <Text style={styles.smallInfoText}>LOCAL</Text>
-            {/*Each button will call the press function with a different charity/organization name*/}
-            <TouchableHighlight onPress={() => this.pressOrg1('Organization1')} style={styles.outerButton}>
-                <View style={styles.innerButton}>
-                    <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 1</Text></Text>
-                </View>
-            </TouchableHighlight>
-            <Text style={styles.smallInfoText}>NON-LOCAL</Text>
-            <TouchableHighlight onPress={() => this.pressOrg2('Organization2')} style={styles.outerButton}>
-                <View style={styles.innerButton}>
-                    <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 2</Text></Text>
-                </View>
-            </TouchableHighlight>
-            <Text style={styles.smallInfoText}>GLOBAL NON-USA</Text>
-            <TouchableHighlight onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-                <View style={styles.innerButton}>
-                    <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-                </View>
-            </TouchableHighlight>
-            <Text style={styles.smallInfoText}>GLOBAL</Text>
+      <View style={styles.container}>
 
-            <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
-                <TouchableHighlight onPress={this.handlePress} style={{width:100}}>
-                <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
-                    <Text style={{color: 'rgba(12,65,123,1)', fontWeight: 'bold'}}>Go Back</Text>
-                </View>
-                </TouchableHighlight>
-          </View>
+        <View style={styles.header}>
+            <Text style={styles.title}>CHARITIES</Text>
         </View>
-        );
+
+        <TouchableOpacity onPress={() => this.searchBar.show()}>
+          <Text style={{ backgroundColor: 'green', height: 30, textAlign:'center' }}>Search</Text>
+        </TouchableOpacity>
+
+        <SearchBar
+          ref={(ref) => this.searchBar = ref}
+          data={items}
+          handleResults={this._handleResults}
+          
+        />
+
+        <Text style={styles.smallInfoText}>LOCAL</Text>
+        {/*Each button will call the press function with a different charity/organization name*/}
+        <TouchableHighlight onPress={() => this.pressOrg1('Organization1')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Neighborhood Health Clinic</Text></Text>
+            </View>
+        </TouchableHighlight>
+        <Text style={styles.smallInfoText}>NON-LOCAL</Text>
+        <TouchableHighlight onPress={() => this.pressOrg2('Organization2')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 2</Text></Text>
+            </View>
+        </TouchableHighlight>
+        <Text style={styles.smallInfoText}>GLOBAL NON-USA</Text>
+        <TouchableHighlight onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
+            </View>
+        </TouchableHighlight>
+        <Text style={styles.smallInfoText}>GLOBAL</Text>
+
+        <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
+            <TouchableHighlight onPress={this.handlePress} style={{width:100}}>
+            <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
+                <Text style={{color: 'rgba(12,65,123,1)', fontWeight: 'bold'}}>Go Back</Text>
+            </View>
+            </TouchableHighlight>
+      </View>
+    </View>
+    );
   }
 }
 
@@ -127,8 +156,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
-    height: 50,
-    marginBottom: 40
+    height: 50
   },
   title: {
     color: 'rgb(12,65,123)',
