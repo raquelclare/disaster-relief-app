@@ -8,7 +8,7 @@ export default class Splash extends Component {
     return (
 
       <View style={styles.container}>
-        <Image source={usaImg} style={{ height: 200, width: 200 }}/>
+        <Image source={usaImg} style={{ height: 100, width: 100 }}/>
       </View>
 
     )
