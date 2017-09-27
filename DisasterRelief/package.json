@@ -9,6 +9,7 @@
 	"dependencies": {
 		"react": "15.3.2",
 		"react-native": "^0.37.0",
+		"react-native-elements": "^0.17.0",
 		"react-native-searchbar": "^1.11.0",
 		"react-native-vector-icons": "^4.4.0"
 	},

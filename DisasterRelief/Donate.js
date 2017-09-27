@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, TouchableOpacity, Image, StyleSheet, Dimensions, Platform } from 'react-native';
-import SearchBar from 'react-native-searchbar'
+import { View, Text, TouchableHighlight, TouchableOpacity, Image, StyleSheet, Dimensions, Platform, TextInput } from 'react-native';
+// import SearchBar from 'react-native-searchbar';
+import { SearchBar } from 'react-native-elements';
 
 const items = [
   'Neighborhood Health Clinic',
@@ -14,12 +15,14 @@ export default class Donate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
+      // loading: true,
       items,
       results: []
     //   organization: ''
     };
     this.handlePress = this.handlePress.bind(this);
+    // I added this and I no longer get the "this.setState is undefined" error
+    this._handleResults = this._handleResults.bind(this);
   }
 
   //to handle results for the search bar
@@ -67,16 +70,27 @@ export default class Donate extends Component {
             <Text style={styles.title}>CHARITIES</Text>
         </View>
 
-        <TouchableOpacity onPress={() => this.searchBar.show()}>
-          <Text style={{ backgroundColor: 'green', height: 30, textAlign:'center' }}>Search</Text>
-        </TouchableOpacity>
+        <View>
+          {
+            this.state.results.map((result, i) => {
+              return (
+                <Text key={i}>
+                  {typeof result === 'object' && !(result instanceof Array) ? 'gold object!' : result.toString()}
+                </Text>
+              );
+            })
+          }
 
-        <SearchBar
-          ref={(ref) => this.searchBar = ref}
-          data={items}
-          handleResults={this._handleResults}
-          
-        />
+          <TouchableOpacity onPress={() => this.searchBar.show()}>
+            <Text style={{ backgroundColor: 'green', height: 50, textAlign:'center', marginTop: 20 }}>Search</Text>
+          </TouchableOpacity>
+        </View>
+        
+          <SearchBar
+            ref={(ref) => this.searchBar = ref}
+            data={items}
+            handleResults={this._handleResults}
+          /> 
 
         <Text style={styles.smallInfoText}>LOCAL</Text>
         {/*Each button will call the press function with a different charity/organization name*/}
@@ -91,7 +105,7 @@ export default class Donate extends Component {
                 <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 2</Text></Text>
             </View>
         </TouchableHighlight>
-        <Text style={styles.smallInfoText}>GLOBAL NON-USA</Text>
+        <Text style={styles.smallInfoText}>GLOBAL (NON-USA)</Text>
         <TouchableHighlight onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
             <View style={styles.innerButton}>
                 <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
