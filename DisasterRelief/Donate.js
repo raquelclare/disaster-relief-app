@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, TouchableOpacity, Image, StyleSheet, Dimensions, Platform, TextInput } from 'react-native';
 import SearchBar from 'react-native-searchbar';
 //import { SearchBar } from 'react-native-elements';
+//import { Container, Header, Content, Card, CardItem, Body } from 'native-base';
 
 const items = [
   'Neighborhood Health Clinic',
@@ -82,7 +83,7 @@ export default class Donate extends Component {
           }
 
           <TouchableOpacity onPress={() => this.searchBar.show()}>
-            <Text style={{ backgroundColor: 'green', height: 50, textAlign:'center', marginTop: 20 }}>Search</Text>
+            <Text style={{ height: 50, textAlign:'center', fontWeight:'bold', color:'gray' }}>SEARCH</Text>
           </TouchableOpacity>
         </View>
         
@@ -91,6 +92,8 @@ export default class Donate extends Component {
             data={items}
             handleResults={this._handleResults}
           />
+        
+        <Text style={styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt purus sit amet iaculis semper. Suspendisse non felis purus. Etiam quis massa ut nisi rhoncus accumsan. Phasellus condimentum dapibus massa, sed molestie urna ornare in. Aliquam sollicitudin feugiat neque, tincidunt blandit turpis elementum nec. In sollicitudin enim in ex faucibus, ac aliquam sapien aliquam. Etiam sodales orci ac nunc fermentum molestie. In quis ultrices elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget congue lorem.</Text>
 
         <Text style={styles.smallInfoText}>LOCAL</Text>
         {/*Each button will call the press function with a different charity/organization name*/}
@@ -128,7 +131,7 @@ export default class Donate extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgb(192,192,192)'
+    backgroundColor: '#fff'
   },
   infoTextContainer: {
     flexDirection: 'column', 
@@ -146,7 +149,7 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   smallInfoText: {
-    color: 'white', 
+    color: 'gray', 
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     textAlign:'center'
   },
@@ -161,7 +164,7 @@ const styles = StyleSheet.create({
     marginRight: 25,
     marginTop: 20,
     marginBottom: 20,
-    color: 'white',
+    color: 'rgb(12,65,123)',
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     textAlign: 'center'
   },
@@ -170,7 +173,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
-    height: 50
+    height: 50, 
+    marginTop: 20
   },
   title: {
     color: 'rgb(12,65,123)',

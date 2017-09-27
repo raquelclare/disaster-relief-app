@@ -33,19 +33,20 @@ export default class Home extends Component {
         {/*Each button will call the press function with a different action name*/}
         <TouchableHighlight onPress={() => this.pressDonate('Donate')} style={styles.outerButton}>
           <View style={styles.innerButton}>
-            <Text style={styles.actionText}><Text style={{color:'#fff'}}>DONATE</Text></Text>
+            <Text style={styles.actionText}><Text style={{color:'#fff'}}>Donate</Text></Text>
           </View>
         </TouchableHighlight>
-        {/*<TouchableHighlight onPress={() => this.pressVolunteer('Volunteer')} style={styles.outerButton}>
+        <TouchableHighlight onPress={() => this.pressVolunteer('Volunteer')} style={styles.outerButton}>
           <View style={styles.innerButton}>
-            <Text style={styles.actionText}><Text style={{color:'#fff'}}>Places I Can Volunteer At</Text></Text>
+            <Text style={styles.actionText}><Text style={{color:'#fff'}}>Volunteer</Text></Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => this.pressResources('Resources')} style={styles.outerButton}>
           <View style={styles.innerButton}>
             <Text style={styles.actionText}><Text style={{color:'#fff'}}>Resources</Text></Text>
           </View>
-        </TouchableHighlight>*/}
+        </TouchableHighlight>
+        <Text style={styles.smallInfoText}>ABOUT</Text>
       </View>
     );
   }
@@ -79,7 +80,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     backgroundColor: 'rgb(80,80,80)',
-    borderLeftWidth: 5,
-    borderColor: 'rgb(0,0,0)'
+    borderRadius: 50
+  },
+  smallInfoText: {
+    color: 'gray', 
+    fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
+    textAlign:'center'
   }
 });
