@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, TouchableOpacity, Image, StyleSheet, Dimensions, Platform, TextInput } from 'react-native';
-// import SearchBar from 'react-native-searchbar';
-import { SearchBar } from 'react-native-elements';
+import SearchBar from 'react-native-searchbar';
+//import { SearchBar } from 'react-native-elements';
 
 const items = [
   'Neighborhood Health Clinic',
@@ -90,7 +90,7 @@ export default class Donate extends Component {
             ref={(ref) => this.searchBar = ref}
             data={items}
             handleResults={this._handleResults}
-          /> 
+          />
 
         <Text style={styles.smallInfoText}>LOCAL</Text>
         {/*Each button will call the press function with a different charity/organization name*/}
