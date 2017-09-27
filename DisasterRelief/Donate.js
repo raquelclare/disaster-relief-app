@@ -31,6 +31,23 @@ export default class Donate extends Component {
     this.setState({ results });
   }
 
+  pressOrg(result) {
+    console.log("result:", result);
+    if(result === "Neighborhood Health Clinic") {
+      this.props.navigator.push({ 
+        id: 6
+      });
+    } else if (result === "Heart of Florida United Way") {
+      this.props.navigator.push({ 
+        id: 7
+      });
+    } else if (result === "United Way of Miami-Dade") {
+      this.props.navigator.push({ 
+        id: 8
+      });
+    }
+  }
+
   pressOrg1(charity) {
     this.props.navigator.push({ 
       id: 6
@@ -75,9 +92,11 @@ export default class Donate extends Component {
           {
             this.state.results.map((result, i) => {
               return (
-                <Text key={i}>
-                  {typeof result === 'object' && !(result instanceof Array) ? 'gold object!' : result.toString()}
-                </Text>
+                <TouchableHighlight key={i} onPress={() => this.pressOrg(result)} style={styles.outerButton}>
+                  <Text key={i}>
+                    {typeof result === 'object' && !(result instanceof Array) ? 'no results found' : result.toString()}
+                  </Text>
+                </TouchableHighlight>
               );
             })
           }
@@ -174,7 +193,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     height: 50, 
-    marginTop: 20
+    marginTop: 30
   },
   title: {
     color: 'rgb(12,65,123)',
