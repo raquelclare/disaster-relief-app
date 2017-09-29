@@ -16,10 +16,34 @@ import Splash from './Splash';
 import Donate from './Donate';
 import Volunteer from './Volunteer';
 import Resources from './Resources';
-// Organization vetted - these file names should be updated with the actual name of the organization as we add them
+// Organization vetted
 import Org1 from './Charities/Org1';
 import Org2 from './Charities/Org2';
 import Org3 from './Charities/Org3';
+import Org4 from './Charities/Org1';
+import Org5 from './Charities/Org1';
+import Org6 from './Charities/Org1';
+import Org7 from './Charities/Org1';
+import Org8 from './Charities/Org1';
+import Org9 from './Charities/Org1';
+import Org10 from './Charities/Org1';
+import Org11 from './Charities/Org1';
+import Org12 from './Charities/Org1';
+import Org13 from './Charities/Org1';
+import Org14 from './Charities/Org1';
+import Org15 from './Charities/Org1';
+import Org16 from './Charities/Org1';
+import Org17 from './Charities/Org1';
+import Org18 from './Charities/Org1';
+import Org19 from './Charities/Org1';
+import Org20 from './Charities/Org1';
+import Org21 from './Charities/Org1';
+import Org22 from './Charities/Org1';
+import Org23 from './Charities/Org1';
+import Org24 from './Charities/Org1';
+import Org25 from './Charities/Org1';
+import Org26 from './Charities/Org1';
+import Org27 from './Charities/Org1';
 
 class DisasterRelief extends Component {
 
@@ -48,6 +72,78 @@ class DisasterRelief extends Component {
     }
     else if (route.id === 8) {
       return <Org3 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 9) {
+      return <Org4 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 10) {
+      return <Org5 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 11) {
+      return <Org6 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 12) {
+      return <Org7 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 13) {
+      return <Org8 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 14) {
+      return <Org9 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 15) {
+      return <Org10 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 16) {
+      return <Org11 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 17) {
+      return <Org12 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 18) {
+      return <Org13 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 19) {
+      return <Org14 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 20) {
+      return <Org15 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 21) {
+      return <Org16 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 22) {
+      return <Org17 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 23) {
+      return <Org18 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 24) {
+      return <Org19 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 25) {
+      return <Org20 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 26) {
+      return <Org21 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 27) {
+      return <Org22 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 28) {
+      return <Org23 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 29) {
+      return <Org24 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 30) {
+      return <Org25 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 31) {
+      return <Org26 navigator={navigator} {...route.passProp} />
+    }
+    else if (route.id === 32) {
+      return <Org27 navigator={navigator} {...route.passProp} />
     }
   }
 

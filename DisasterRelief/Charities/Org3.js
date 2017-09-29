@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, Image, StyleSheet, Platform, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView } from 'react-native';
 import orgImg from '../org.jpg';
 
 export default class Org3 extends Component {
@@ -11,13 +11,6 @@ export default class Org3 extends Component {
     };
     this.handlePress = this.handlePress.bind(this);
   }
-
-  // // When the component mounts..
-  // componentDidMount() {
-  //   // Call our fetchData function on the charity/organization that was passed in as props
-  //   this.fetchData(this.props.name)
-  // }
-
   // The handlePress function will return us to the previous page
   handlePress() {
     this.props.navigator.pop();
@@ -62,28 +55,15 @@ export default class Org3 extends Component {
           {/*--------D3 INFO TO GO HERE---------*/}
  
           <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
-            <TouchableHighlight onPress={this.handlePress} style={{width:100}}>
+            <TouchableOpacity onPress={this.handlePress} style={{width:100}}>
               <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
                 <Text style={{color: 'rgb(12,65,123)', fontWeight: 'bold'}}>Go Back</Text>
               </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
           </ScrollView>
         </View>
       );
-    // } 
-    // else {
-    //   return (
-    //     <View>
-    //       <Text>Loading {this.props.name} information!</Text>
-    //       <TouchableHighlight onPress={this.handlePress}>
-    //         <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: '#c9f3e7'}}>
-    //           <Text>Go Back!</Text>
-    //         </View>
-    //       </TouchableHighlight>
-    //     </View>
-    //   );
-    // }
   }
 }
 

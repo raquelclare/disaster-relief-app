@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, Image, StyleSheet, Platform, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView } from 'react-native';
 import orgImg from '../org.jpg';
 
 export default class Org1 extends Component {
@@ -31,7 +31,7 @@ export default class Org1 extends Component {
         <View style={styles.container}>
 
           <View style={styles.header}>
-            <Text style={styles.title}>ORGANIZATION 1</Text>
+            <Text style={styles.title}>Neighborhood Health Clinic</Text>
           </View>
           <ScrollView>
           <Image
@@ -45,16 +45,19 @@ export default class Org1 extends Component {
               <Text style={styles.smallInfoText}>Rated</Text>
             </View>
             <View style={styles.infoTextContainer}>
-              <Text style={styles.bigInfoText}>2006</Text>
+              <Text style={styles.bigInfoText}>1999</Text>
               <Text style={styles.smallInfoText}>Year Founded</Text>
             </View>
-            <View style={styles.infoTextContainer}>
+            {/*<View style={styles.infoTextContainer}>
               <Text style={styles.bigInfoText}>N/A</Text>
               <Text style={styles.smallInfoText}>Other</Text>
-            </View>
+            </View>*/}
           </View>
 
-          <Text style={styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt purus sit amet iaculis semper. Suspendisse non felis purus. Etiam quis massa ut nisi rhoncus accumsan. Phasellus condimentum dapibus massa, sed molestie urna ornare in. Aliquam sollicitudin feugiat neque, tincidunt blandit turpis elementum nec. In sollicitudin enim in ex faucibus, ac aliquam sapien aliquam. Etiam sodales orci ac nunc fermentum molestie. In quis ultrices elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget congue lorem.</Text>
+          <Text style={styles.text}>The Neighborhood Health Clinic is a medical clinic for the working poor - conceived by Dr. Bill and Nancy Lascheid just two short months after they retired from their full-time Naples dermatology practice. The concept soon gained momentum and attracted supporters. With shared enthusiasm of friends, and help from professionals and volunteers in the community, the Clinic was able to open its doors in April 1999. 
+
+With the ongoing support of more than 700 volunteers from doctors and nurses to dentists and dental hygienists to non-medical and office help, the Neighborhood Health Clinic is able to deliver quality medical care to low income, working but uninsured Collier County adults.
+</Text>
 
           <Text style={styles.bigLightText}>More Info</Text>
           <Text style={styles.bigLightText}>More Info</Text> 
@@ -62,11 +65,11 @@ export default class Org1 extends Component {
           {/*--------D3 INFO TO GO HERE---------*/}
  
           <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
-            <TouchableHighlight onPress={this.handlePress} style={{width:100}}>
+            <TouchableOpacity onPress={this.handlePress} style={{width:100}}>
               <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
                 <Text style={{color: 'rgb(12,65,123)', fontWeight: 'bold'}}>Go Back</Text>
               </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
           </ScrollView>
         </View>

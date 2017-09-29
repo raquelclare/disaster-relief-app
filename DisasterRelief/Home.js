@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, StyleSheet, Dimensions, Platform } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Platform } from 'react-native';
 
 export default class Home extends Component {
 
@@ -28,24 +28,24 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>ndre<Text style={{color:'blue'}}>.</Text></Text>
-        <Text style={{textAlign:'center'}}>National Disaster Relief Education</Text>
+        <Text style={styles.title}>dre<Text style={{color:'rgb(49,140,231)'}}>.</Text></Text>
+        <Text style={{textAlign:'center'}}>Disaster Relief Education</Text>
         {/*Each button will call the press function with a different action name*/}
-        <TouchableHighlight onPress={() => this.pressDonate('Donate')} style={styles.outerButton}>
+        <TouchableOpacity onPress={() => this.pressDonate('Donate')} style={styles.outerButton}>
           <View style={styles.innerButton}>
             <Text style={styles.actionText}><Text style={{color:'#fff'}}>Donate</Text></Text>
           </View>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={() => this.pressVolunteer('Volunteer')} style={styles.outerButton}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.pressVolunteer('Volunteer')} style={styles.outerButton}>
           <View style={styles.innerButton}>
             <Text style={styles.actionText}><Text style={{color:'#fff'}}>Volunteer</Text></Text>
           </View>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={() => this.pressResources('Resources')} style={styles.outerButton}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.pressResources('Resources')} style={styles.outerButton}>
           <View style={styles.innerButton}>
             <Text style={styles.actionText}><Text style={{color:'#fff'}}>Resources</Text></Text>
           </View>
-        </TouchableHighlight>
+        </TouchableOpacity>
         <Text style={styles.smallInfoText}>ABOUT</Text>
       </View>
     );
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     marginTop: 75,
     marginBottom: 50,
     fontWeight: 'bold',
-    color: 'red'
+    color: 'rgb(21,96,189)'
   },
   actionText: {
     fontSize: 20,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   innerButton: {
     paddingVertical: 10,
     paddingHorizontal: 20,
-    backgroundColor: 'rgb(80,80,80)',
+    backgroundColor: 'rgb(49,140,231)',
     borderRadius: 50
   },
   smallInfoText: {
