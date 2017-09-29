@@ -11,6 +11,13 @@ export default class Org5 extends Component {
     };
     this.handlePress = this.handlePress.bind(this);
   }
+
+  // // When the component mounts..
+  // componentDidMount() {
+  //   // Call our fetchData function on the charity/organization that was passed in as props
+  //   this.fetchData(this.props.name)
+  // }
+
   // The handlePress function will return us to the previous page
   handlePress() {
     this.props.navigator.pop();
@@ -24,7 +31,7 @@ export default class Org5 extends Component {
         <View style={styles.container}>
 
           <View style={styles.header}>
-            <Text style={styles.title}>ORGANIZATION 3</Text>
+            <Text style={styles.title}>Second Harvest Food Bank of Central Florida</Text>
           </View>
           <ScrollView>
           <Image
@@ -37,20 +44,19 @@ export default class Org5 extends Component {
               <Text style={styles.bigInfoText}>4/4</Text>
               <Text style={styles.smallInfoText}>Rated</Text>
             </View>
-            <View style={styles.infoTextContainer}>
-              <Text style={styles.bigInfoText}>2010</Text>
-              <Text style={styles.smallInfoText}>Year Founded</Text>
-            </View>
-            <View style={styles.infoTextContainer}>
+            {/*<View style={styles.infoTextContainer}>
               <Text style={styles.bigInfoText}>N/A</Text>
               <Text style={styles.smallInfoText}>Other</Text>
-            </View>
+            </View>*/}
           </View>
 
-          <Text style={styles.text}>Sed risus arcu, suscipit eget rutrum quis, congue sed odio. Donec et diam dolor. Nullam malesuada arcu id libero molestie porta. Nullam porttitor fermentum enim, ac lacinia lacus suscipit vel. Donec venenatis, enim sit amet tempus mollis, lorem nunc vulputate ligula, in blandit nulla ipsum id mauris. Ut ut erat orci. Duis accumsan ante scelerisque auctor dignissim. In nec sagittis erat. Aenean in vulputate odio. Praesent dignissim tortor vel turpis consequat varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In commodo laoreet molestie. Integer non fringilla justo, ut mollis magna.</Text>
+          <Text style={styles.text}>Mission: To create hope and nourish lives through a powerful hunger relief network, while multiplying the generosity of a caring community.</Text>
+
+           <Text style={styles.text}>Second Harvest Food Bank of Central Florida is a private, nonprofit organization that collects, stores, and distributes donated food to more than 550 feeding partners in six Central Florida counties: Brevard, Lake, Orange, Osceola, Seminole, and Volusia. Last year, with the help of numerous donors, volunteers, and a caring, committed community, the food bank distributed 52 million meals to partner programs such as food pantries, soup kitchens, women’s shelters, senior centers, day care centers, and Kids Cafes.</Text>
+
+           <Text style={styles.text}>In addition to helping feed neighbors who need help, Second Harvest also transforms dozens of lives directly every year. Economically-challenged adults who graduate from their 14-week culinary training program are placed in ‘better than minimum wage’ jobs that set them and their families on a path to self-sustainability. Yet another important activity helps connect people who are eligible to receive SNAP food assistance benefits with the resources they need to access the program and get help.</Text>      
 
           <Text style={styles.bigLightText}>More Info</Text>
-          <Text style={styles.bigLightText}>More Info</Text>  
 
           {/*--------D3 INFO TO GO HERE---------*/}
  
@@ -64,6 +70,19 @@ export default class Org5 extends Component {
           </ScrollView>
         </View>
       );
+    // } 
+    // else {
+    //   return (
+    //     <View>
+    //       <Text>Loading {this.props.name} information!</Text>
+    //       <TouchableHighlight onPress={this.handlePress}>
+    //         <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: '#c9f3e7'}}>
+    //           <Text>Go Back!</Text>
+    //         </View>
+    //       </TouchableHighlight>
+    //     </View>
+    //   );
+    // }
   }
 }
 
@@ -92,6 +111,7 @@ const styles = StyleSheet.create({
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light'
   },
   bigLightText: {
+    marginTop: 20,
     color: 'white', 
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     fontSize:25, 
@@ -101,7 +121,6 @@ const styles = StyleSheet.create({
     marginLeft: 25,
     marginRight: 25,
     marginTop: 20,
-    marginBottom: 20,
     color: 'white',
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     textAlign: 'center'
@@ -112,6 +131,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgb(21,96,189)',
     height: 50,
+    marginTop: 30
   },
   title: {
     color: '#fff',

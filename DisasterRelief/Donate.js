@@ -260,141 +260,170 @@ export default class Donate extends Component {
 
         <Text style={styles.smallInfoText}>LOCAL</Text>
         {/*Each button will call the press function with a different charity/organization name*/}
-        <TouchableOpacity onPress={() => this.pressOrg1('Organization1')} style={styles.outerButton}>
+        <TouchableOpacity onPress={() => this.pressOrg1('Neighborhood Health Clinic')} style={styles.outerButton}>
             <View style={styles.innerButton}>
                 <Text style={styles.actionText}><Text style={{color:'#fff'}}>Neighborhood Health Clinic</Text></Text>
             </View>
         </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg2('Heart of Florida United Way')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Heart of Florida United Way</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg3('United Way of Miami-Dade')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>United Way of Miami-Dade</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg4('All Faiths Food Bank')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>All Faiths Food Bank</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg5('Second Harvest Food Bank of Central Florida')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Second Harvest Food Bank of Central Florida</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg6('Boys and Girls Club of Miami Dade')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Boys and Girls Club of Miami Dade</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg7('Austin Humane Society')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Austin Humane Society</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg8('Houston Food Bank')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Houston Food Bank</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg9('San Antonio Food Bank')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>San Antonio Food Bank</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg10('Houston Habitat for Humanity')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Houston Habitat for Humanity</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg11('Greater Baton Rouge Food Bank')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Greater Baton Rouge Food Bank</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg12('United Way of Central Louisiana')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>United Way of Central Louisiana</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg13('United Way of Greater Houston')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>United Way of Greater Houston</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg14('ConPRmetidos')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ConPRmetidos</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg15('United for Puerto Rico')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>United for Puerto Rico</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+
+
         <Text style={styles.smallInfoText}>GLOBAL</Text>
-        <TouchableOpacity onPress={() => this.pressOrg2('Organization2')} style={styles.outerButton}>
+        <TouchableOpacity onPress={() => this.pressOrg16('All Hands Volunteer')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 2</Text></Text>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>All Hands Volunteer</Text></Text>
             </View>
         </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg17('Catholic Relief Services')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Catholic Relief Services</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg18('Direct Relief')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Direct Relief</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg19('Episcopal Relief and Development')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Episcopal Relief and Development</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg20('United Methodist Committee on Relief')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>United Methodist Committee on Relief</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg21('PetSmart Charities')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>PetSmart Charities</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg22('Operation USA')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Operation USA</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg23('Save the Children')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Save the Children</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.pressOrg24('UNICEF USA')} style={styles.outerButton}>
+            <View style={styles.innerButton}>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>UNICEF USA</Text></Text>
+            </View>
+        </TouchableOpacity>
+
+
         <Text style={styles.smallInfoText}>GLOBAL (NON-USA)</Text>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
+        <TouchableOpacity onPress={() => this.pressOrg25('International Medical Corps')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>International Medical Corps</Text></Text>
             </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg4('Organization3')} style={styles.outerButton}>
+
+        <TouchableOpacity onPress={() => this.pressOrg26('Lutheran World Relief')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 4</Text></Text>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Lutheran World Relief</Text></Text>
             </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg5('Organization3')} style={styles.outerButton}>
+
+        <TouchableOpacity onPress={() => this.pressOrg27('Partners in Health')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 5</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg6('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 6</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg7('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 7</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.pressOrg3('Organization3')} style={styles.outerButton}>
-            <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ORG 3</Text></Text>
+                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Partners in Health</Text></Text>
             </View>
         </TouchableOpacity>
 

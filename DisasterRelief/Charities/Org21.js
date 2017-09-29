@@ -11,6 +11,13 @@ export default class Org21 extends Component {
     };
     this.handlePress = this.handlePress.bind(this);
   }
+
+  // // When the component mounts..
+  // componentDidMount() {
+  //   // Call our fetchData function on the charity/organization that was passed in as props
+  //   this.fetchData(this.props.name)
+  // }
+
   // The handlePress function will return us to the previous page
   handlePress() {
     this.props.navigator.pop();
@@ -24,7 +31,7 @@ export default class Org21 extends Component {
         <View style={styles.container}>
 
           <View style={styles.header}>
-            <Text style={styles.title}>ORGANIZATION 3</Text>
+            <Text style={styles.title}>PetSmart Charities</Text>
           </View>
           <ScrollView>
           <Image
@@ -34,23 +41,26 @@ export default class Org21 extends Component {
 
           <View style={{flexDirection: 'row', justifyContent: 'space-around', marginTop: 10}}>
             <View style={styles.infoTextContainer}>
-              <Text style={styles.bigInfoText}>4/4</Text>
+              <Text style={styles.bigInfoText}>4/4, A+</Text>
               <Text style={styles.smallInfoText}>Rated</Text>
             </View>
             <View style={styles.infoTextContainer}>
-              <Text style={styles.bigInfoText}>2010</Text>
+              <Text style={styles.bigInfoText}>1988</Text>
               <Text style={styles.smallInfoText}>Year Founded</Text>
             </View>
-            <View style={styles.infoTextContainer}>
+            {/*<View style={styles.infoTextContainer}>
               <Text style={styles.bigInfoText}>N/A</Text>
               <Text style={styles.smallInfoText}>Other</Text>
-            </View>
+            </View>*/}
           </View>
 
-          <Text style={styles.text}>Sed risus arcu, suscipit eget rutrum quis, congue sed odio. Donec et diam dolor. Nullam malesuada arcu id libero molestie porta. Nullam porttitor fermentum enim, ac lacinia lacus suscipit vel. Donec venenatis, enim sit amet tempus mollis, lorem nunc vulputate ligula, in blandit nulla ipsum id mauris. Ut ut erat orci. Duis accumsan ante scelerisque auctor dignissim. In nec sagittis erat. Aenean in vulputate odio. Praesent dignissim tortor vel turpis consequat varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In commodo laoreet molestie. Integer non fringilla justo, ut mollis magna.</Text>
+          <Text style={styles.text}>Saving the lives of homeless pets.</Text>
+
+           <Text style={styles.text}>PetSmart Charities envisions a world in which every pet has a lifelong, loving home. PetSmart Charities and PetSmart Charities of Canada are nonprofit animal welfare organizations that save the lives of homeless pets. More than 400,000 dogs and cats find homes each year through their adoption program in all PetSmart stores and sponsored adoption events.</Text> 
+
+           <Text style={styles.text}>PetSmart Charities grants more money to directly help pets in need than any other animal welfare group in North America, with a focus on funding spay/neuter services that help communities solve the problem of pet overpopulation.</Text>       
 
           <Text style={styles.bigLightText}>More Info</Text>
-          <Text style={styles.bigLightText}>More Info</Text>  
 
           {/*--------D3 INFO TO GO HERE---------*/}
  
@@ -64,6 +74,19 @@ export default class Org21 extends Component {
           </ScrollView>
         </View>
       );
+    // } 
+    // else {
+    //   return (
+    //     <View>
+    //       <Text>Loading {this.props.name} information!</Text>
+    //       <TouchableHighlight onPress={this.handlePress}>
+    //         <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: '#c9f3e7'}}>
+    //           <Text>Go Back!</Text>
+    //         </View>
+    //       </TouchableHighlight>
+    //     </View>
+    //   );
+    // }
   }
 }
 
@@ -92,6 +115,7 @@ const styles = StyleSheet.create({
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light'
   },
   bigLightText: {
+    marginTop: 20,
     color: 'white', 
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     fontSize:25, 
@@ -101,7 +125,6 @@ const styles = StyleSheet.create({
     marginLeft: 25,
     marginRight: 25,
     marginTop: 20,
-    marginBottom: 20,
     color: 'white',
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     textAlign: 'center'
@@ -112,6 +135,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgb(21,96,189)',
     height: 50,
+    marginTop: 30
   },
   title: {
     color: '#fff',

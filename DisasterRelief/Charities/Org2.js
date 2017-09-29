@@ -31,7 +31,7 @@ export default class Org2 extends Component {
         <View style={styles.container}>
 
           <View style={styles.header}>
-            <Text style={styles.title}>ORGANIZATION 2</Text>
+            <Text style={styles.title}>Heart of Florida United Way</Text>
           </View>
           <ScrollView>
           <Image
@@ -41,23 +41,27 @@ export default class Org2 extends Component {
 
           <View style={{flexDirection: 'row', justifyContent: 'space-around', marginTop: 10}}>
             <View style={styles.infoTextContainer}>
-              <Text style={styles.bigInfoText}>3/4</Text>
+              <Text style={styles.bigInfoText}>4/4</Text>
               <Text style={styles.smallInfoText}>Rated</Text>
             </View>
             <View style={styles.infoTextContainer}>
-              <Text style={styles.bigInfoText}>2014</Text>
+              <Text style={styles.bigInfoText}>1939</Text>
               <Text style={styles.smallInfoText}>Year Founded</Text>
             </View>
-            <View style={styles.infoTextContainer}>
+            {/*<View style={styles.infoTextContainer}>
               <Text style={styles.bigInfoText}>N/A</Text>
               <Text style={styles.smallInfoText}>Other</Text>
-            </View>
+            </View>*/}
           </View>
 
-          <Text style={styles.text}>Maecenas pretium luctus metus tincidunt tristique. Maecenas scelerisque porttitor est, id pretium lectus commodo eu. Nulla magna sapien, tincidunt ac lacus vel, ultricies eleifend neque. Donec tincidunt lorem et dui eleifend dignissim. Suspendisse sit amet diam id lacus eleifend luctus. Aliquam a massa lacus. Nam pharetra hendrerit facilisis. Cras vel mollis erat, id mattis tellus. Praesent in pellentesque leo. Aenean viverra ipsum sem, non fermentum augue consequat ut. Cras ut felis sit amet est cursus aliquet sed ac enim.</Text>
+          <Text style={styles.text}>Mission: Heart of Florida United Way fights for the education, health, and financial stability of every person in Central Florida.</Text>
+
+           <Text style={styles.text}>Heart of Florida United Way works to create a thriving community where adults and children achieve their full potential with access to a solid education, good health, safe neighborhoods and jobs that pay a living wage.</Text>
+
+            <Text style={styles.text}>Focusing on four core areas — education, income, health and basic needs — Heart of Florida United Way serves Osceola, Orange, and Seminole Counties. They work collaboratively with community partners and other non-profits to create a positive and sustainable impact in Central Florida. They strategically invest in effective programs and services that solve complex issues, bettering the community for all.
+            </Text>
 
           <Text style={styles.bigLightText}>More Info</Text>
-          <Text style={styles.bigLightText}>More Info</Text> 
 
           {/*--------D3 INFO TO GO HERE---------*/}
  
@@ -112,6 +116,7 @@ const styles = StyleSheet.create({
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light'
   },
   bigLightText: {
+    marginTop: 20,
     color: 'white', 
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     fontSize:25, 
@@ -121,7 +126,6 @@ const styles = StyleSheet.create({
     marginLeft: 25,
     marginRight: 25,
     marginTop: 20,
-    marginBottom: 20,
     color: 'white',
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     textAlign: 'center'
@@ -132,6 +136,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgb(21,96,189)',
     height: 50,
+    marginTop: 30
   },
   title: {
     color: '#fff',

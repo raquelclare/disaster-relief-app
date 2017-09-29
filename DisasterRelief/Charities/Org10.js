@@ -11,6 +11,13 @@ export default class Org10 extends Component {
     };
     this.handlePress = this.handlePress.bind(this);
   }
+
+  // // When the component mounts..
+  // componentDidMount() {
+  //   // Call our fetchData function on the charity/organization that was passed in as props
+  //   this.fetchData(this.props.name)
+  // }
+
   // The handlePress function will return us to the previous page
   handlePress() {
     this.props.navigator.pop();
@@ -24,7 +31,7 @@ export default class Org10 extends Component {
         <View style={styles.container}>
 
           <View style={styles.header}>
-            <Text style={styles.title}>ORGANIZATION 3</Text>
+            <Text style={styles.title}>Houston Habitat for Humanity</Text>
           </View>
           <ScrollView>
           <Image
@@ -38,19 +45,20 @@ export default class Org10 extends Component {
               <Text style={styles.smallInfoText}>Rated</Text>
             </View>
             <View style={styles.infoTextContainer}>
-              <Text style={styles.bigInfoText}>2010</Text>
+              <Text style={styles.bigInfoText}>1987</Text>
               <Text style={styles.smallInfoText}>Year Founded</Text>
             </View>
-            <View style={styles.infoTextContainer}>
+            {/*<View style={styles.infoTextContainer}>
               <Text style={styles.bigInfoText}>N/A</Text>
               <Text style={styles.smallInfoText}>Other</Text>
-            </View>
+            </View>*/}
           </View>
 
-          <Text style={styles.text}>Sed risus arcu, suscipit eget rutrum quis, congue sed odio. Donec et diam dolor. Nullam malesuada arcu id libero molestie porta. Nullam porttitor fermentum enim, ac lacinia lacus suscipit vel. Donec venenatis, enim sit amet tempus mollis, lorem nunc vulputate ligula, in blandit nulla ipsum id mauris. Ut ut erat orci. Duis accumsan ante scelerisque auctor dignissim. In nec sagittis erat. Aenean in vulputate odio. Praesent dignissim tortor vel turpis consequat varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In commodo laoreet molestie. Integer non fringilla justo, ut mollis magna.</Text>
+          <Text style={styles.text}>Incorporated in 1987, Houston Habitat for Humanity dedicated its first home in 1988. To date, more than 995 Houston Habitat homes have been built housing over 3980 people, from infants to the elderly. Houston Habitat builds affordable energy-efficient homes and through its neighborhood revitalization initiatives, repairs existing older homes for low income families. Houston Habitat complies with the Federal Fair Housing Act in the marketing, sale, and purchasing of properties. All applicants receive consideration for home ownership without regard to race, color, religion, national origin, sexual orientation, gender identity, questioning, family or marital status.</Text>
+
+           <Text style={styles.text}>As the non-profit has grown, support services added include Family Services, Mortgage Services, Volunteer Services, and the ReStore. The program annually builds 30-50 new homes, processes 30-50 new mortgages, and repairs 30-50 older homes. Houston Habitat relies on donor support and does not receive funds from Habitat International or United Way. For 27 years, the Houston Habitat mission has basically remained the same, to provide decent housing for low to moderate income families so they might thrive and have hope for a better future.</Text> 
 
           <Text style={styles.bigLightText}>More Info</Text>
-          <Text style={styles.bigLightText}>More Info</Text>  
 
           {/*--------D3 INFO TO GO HERE---------*/}
  
@@ -64,6 +72,19 @@ export default class Org10 extends Component {
           </ScrollView>
         </View>
       );
+    // } 
+    // else {
+    //   return (
+    //     <View>
+    //       <Text>Loading {this.props.name} information!</Text>
+    //       <TouchableHighlight onPress={this.handlePress}>
+    //         <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: '#c9f3e7'}}>
+    //           <Text>Go Back!</Text>
+    //         </View>
+    //       </TouchableHighlight>
+    //     </View>
+    //   );
+    // }
   }
 }
 
@@ -92,6 +113,7 @@ const styles = StyleSheet.create({
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light'
   },
   bigLightText: {
+    marginTop: 20,
     color: 'white', 
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     fontSize:25, 
@@ -101,7 +123,6 @@ const styles = StyleSheet.create({
     marginLeft: 25,
     marginRight: 25,
     marginTop: 20,
-    marginBottom: 20,
     color: 'white',
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     textAlign: 'center'
@@ -112,6 +133,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgb(21,96,189)',
     height: 50,
+    marginTop: 30
   },
   title: {
     color: '#fff',
