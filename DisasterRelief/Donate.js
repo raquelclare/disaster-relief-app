@@ -7,7 +7,31 @@ import SearchBar from 'react-native-searchbar';
 const items = [
   'Neighborhood Health Clinic',
   'Heart of Florida United Way',
-  'United Way of Miami-Dade'
+  'United Way of Miami-Dade',
+  'All Faiths Food Bank',
+  'Second Harvest Food Bank of Central Florida',
+  'Boys and Girls Club of Miami Dade',
+  'Austin Humane Society',
+  'Houston Food Bank',
+  'San Antonio Food Bank',
+  'Houston Habitat for Humanity',
+  'Greater Baton Rouge Food Bank',
+  'United Way of Central Louisiana',
+  'United Way of Greater Houston',
+  'ConPRmetidos',
+  'United for Puerto Rico',
+  'All Hands Volunteer',
+  'Catholic Relief Services',
+  'Direct Relief',
+  'Episcopal Relief and Development',
+  'United Methodist Committee on Relief',
+  'PetSmart Charities',
+  'Operation USA',
+  'Save the Children',
+  'UNICEF USA',
+  'International Medical Corps',
+  'Lutheran World Relief',
+  'Partners in Health'
 ]
 
 export default class Donate extends Component {
@@ -246,7 +270,7 @@ export default class Donate extends Component {
           }
 
           <TouchableOpacity onPress={() => this.searchBar.show()}>
-            <Text style={{ height: 50, textAlign:'center', fontWeight:'bold', color:'gray' }}>SEARCH</Text>
+            <Text style={styles.search}>SEARCH</Text>
           </TouchableOpacity>
         </View>
         
@@ -256,174 +280,203 @@ export default class Donate extends Component {
             handleResults={this._handleResults}
           />
         <ScrollView>
-        <Text style={styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt purus sit amet iaculis semper. Suspendisse non felis purus. Etiam quis massa ut nisi rhoncus accumsan. Phasellus condimentum dapibus massa, sed molestie urna ornare in. Aliquam sollicitudin feugiat neque, tincidunt blandit turpis elementum nec. In sollicitudin enim in ex faucibus, ac aliquam sapien aliquam. Etiam sodales orci ac nunc fermentum molestie. In quis ultrices elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget congue lorem.</Text>
+        <Text style={styles.text}>The list of charities below is complete with information on what disasters each charity is helping with, and a rating. Ratings are taken from Charity Navigator and Charity Watch.</Text>
 
-        <Text style={styles.smallInfoText}>LOCAL</Text>
+        <Text style={styles.text}>All charities have been vetted, regardless of whether or not they are complete with a rating.</Text>
+
+        <Text style={styles.infoText}>LOCAL</Text>
         {/*Each button will call the press function with a different charity/organization name*/}
         <TouchableOpacity onPress={() => this.pressOrg1('Neighborhood Health Clinic')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Neighborhood Health Clinic</Text></Text>
+                <Text style={styles.actionText}>Neighborhood Health Clinic</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Irma, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg2('Heart of Florida United Way')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Heart of Florida United Way</Text></Text>
+                <Text style={styles.actionText}>Heart of Florida United Way</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Irma, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg3('United Way of Miami-Dade')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>United Way of Miami-Dade</Text></Text>
+                <Text style={styles.actionText}>United Way of Miami-Dade</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Irma, 3/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg4('All Faiths Food Bank')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>All Faiths Food Bank</Text></Text>
+                <Text style={styles.actionText}>All Faiths Food Bank</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Irma, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg5('Second Harvest Food Bank of Central Florida')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Second Harvest Food Bank of Central Florida</Text></Text>
+                <Text style={styles.actionText}>Second Harvest Food Bank of Central Florida</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Irma, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg6('Boys and Girls Club of Miami Dade')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Boys and Girls Club of Miami Dade</Text></Text>
+                <Text style={styles.actionText}>Boys and Girls Club of Miami Dade</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Irma, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg7('Austin Humane Society')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Austin Humane Society</Text></Text>
+                <Text style={styles.actionText}>Austin Humane Society</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Harvey, 3/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg8('Houston Food Bank')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Houston Food Bank</Text></Text>
+                <Text style={styles.actionText}>Houston Food Bank</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Harvey, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg9('San Antonio Food Bank')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>San Antonio Food Bank</Text></Text>
+                <Text style={styles.actionText}>San Antonio Food Bank</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Harvey, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg10('Houston Habitat for Humanity')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Houston Habitat for Humanity</Text></Text>
+                <Text style={styles.actionText}>Houston Habitat for Humanity</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Harvey, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg11('Greater Baton Rouge Food Bank')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Greater Baton Rouge Food Bank</Text></Text>
+                <Text style={styles.actionText}>Greater Baton Rouge Food Bank</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Harvey, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg12('United Way of Central Louisiana')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>United Way of Central Louisiana</Text></Text>
+                <Text style={styles.actionText}>United Way of Central Louisiana</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Harvey, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg13('United Way of Greater Houston')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>United Way of Greater Houston</Text></Text>
+                <Text style={styles.actionText}>United Way of Greater Houston</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Harvey, 4/4</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg14('ConPRmetidos')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>ConPRmetidos</Text></Text>
+                <Text style={styles.actionText}>ConPRmetidos</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Maria</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg15('United for Puerto Rico')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>United for Puerto Rico</Text></Text>
+                <Text style={styles.actionText}>United for Puerto Rico</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Maria</Text>
             </View>
         </TouchableOpacity>
 
 
 
-        <Text style={styles.smallInfoText}>GLOBAL</Text>
+        <Text style={styles.infoText}>GLOBAL</Text>
         <TouchableOpacity onPress={() => this.pressOrg16('All Hands Volunteer')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>All Hands Volunteer</Text></Text>
+                <Text style={styles.actionText}>All Hands Volunteer</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma, Harvey, and Maria</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg17('Catholic Relief Services')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Catholic Relief Services</Text></Text>
+                <Text style={styles.actionText}>Catholic Relief Services</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma, Harvey, and Maria; earthquakes in Mexico</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg18('Direct Relief')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Direct Relief</Text></Text>
+                <Text style={styles.actionText}>Direct Relief</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma, Harvey, and Maria; earthquakes in Mexico</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg19('Episcopal Relief and Development')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Episcopal Relief and Development</Text></Text>
+                <Text style={styles.actionText}>Episcopal Relief and Development</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma, Harvey, and Maria</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg20('United Methodist Committee on Relief')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>United Methodist Committee on Relief</Text></Text>
+                <Text style={styles.actionText}>United Methodist Committee on Relief</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma, Harvey, and Maria; earthquakes in Mexico</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg21('PetSmart Charities')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>PetSmart Charities</Text></Text>
+                <Text style={styles.actionText}>PetSmart Charities</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma and Harvey</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg22('Operation USA')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Operation USA</Text></Text>
+                <Text style={styles.actionText}>Operation USA</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma, Harvey, and Maria; earthquakes in Mexico</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg23('Save the Children')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Save the Children</Text></Text>
+                <Text style={styles.actionText}>Save the Children</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma, Harvey, and Maria; earthquakes in Mexico</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg24('UNICEF USA')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>UNICEF USA</Text></Text>
+                <Text style={styles.actionText}>UNICEF USA</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma, Harvey, and Maria; earthquakes in Mexico</Text>
             </View>
         </TouchableOpacity>
 
 
-        <Text style={styles.smallInfoText}>GLOBAL (NON-USA)</Text>
+        <Text style={styles.infoText}>GLOBAL (NON-USA)</Text>
         <TouchableOpacity onPress={() => this.pressOrg25('International Medical Corps')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>International Medical Corps</Text></Text>
+                <Text style={styles.actionText}>International Medical Corps</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma and Maria; earthquakes in Mexico</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg26('Lutheran World Relief')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Lutheran World Relief</Text></Text>
+                <Text style={styles.actionText}>Lutheran World Relief</Text>
+                <Text style={styles.actionTextSmall}>Hurricanes Irma and Maria</Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.pressOrg27('Partners in Health')} style={styles.outerButton}>
             <View style={styles.innerButton}>
-                <Text style={styles.actionText}><Text style={{color:'#fff'}}>Partners in Health</Text></Text>
+                <Text style={styles.actionText}>Partners in Health</Text>
+                <Text style={styles.actionTextSmall}>Hurricane Irma; earthquakes in Mexico</Text>
             </View>
         </TouchableOpacity>
 
@@ -458,10 +511,14 @@ const styles = StyleSheet.create({
   bigInfoText: {
     fontSize: 32, 
     fontWeight: 'bold', 
-    color: 'white'
+    color: '#fff'
   },
-  smallInfoText: {
-    color: 'gray', 
+  infoText: {
+    marginTop: 10,
+    marginBottom: 10,
+    color: 'gray',
+    fontWeight: 'bold',
+    fontSize: 25, 
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     textAlign:'center'
   },
@@ -474,7 +531,6 @@ const styles = StyleSheet.create({
   text: {
     marginLeft: 25,
     marginRight: 25,
-    marginTop: 20,
     marginBottom: 20,
     color: 'rgb(12,65,123)',
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
@@ -502,5 +558,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: 'rgb(49,140,231)',
     borderRadius: 50
+  },
+  actionText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16
+  },
+  actionTextSmall: {
+    color: '#fff'
+  },
+  search: {
+    marginBottom: 20,
+    height: 40, 
+    textAlign:'center', 
+    fontWeight:'bold', 
+    paddingVertical: 10,
+    backgroundColor: 'gray',
+    color: '#fff',
+    fontSize: 18
   }
 });
