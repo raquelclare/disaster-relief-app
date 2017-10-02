@@ -36,8 +36,12 @@ const items = [
 
 // const items = [
 //   {
-//   name: 'PetSmart Charities',
-//   disasters: [disaster, disaster]
+//   name: 'Austin Humane Socieity',
+//   disasters: ['Harvey']
+//   },
+//   {
+//     name: 'Neighborhood Health Clinic',
+//     disasters: ['Irma']
 //   }
 // ]
 
