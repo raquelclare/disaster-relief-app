@@ -34,6 +34,13 @@ const items = [
   'Partners in Health'
 ]
 
+// const items = [
+//   {
+//   name: 'PetSmart Charities',
+//   disasters: [disaster, disaster]
+//   }
+// ]
+
 export default class Donate extends Component {
 
   //added items and results
