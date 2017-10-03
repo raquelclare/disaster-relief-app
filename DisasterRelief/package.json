@@ -7,6 +7,9 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"art": "^0.10.1",
+		"d3": "^4.11.0",
+		"d3-shape": "^1.2.0",
 		"native-base": "^2.3.2",
 		"react": "15.3.2",
 		"react-native": "^0.37.0",

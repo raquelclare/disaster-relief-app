@@ -1,5 +1,7 @@
+'use strict';
+
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, Platform, TextInput, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions, Platform, TextInput, ScrollView, Linking } from 'react-native';
 import SearchBar from 'react-native-searchbar';
 //import { SearchBar } from 'react-native-elements';
 //import { Container, Header, Content, Card, CardItem, Body } from 'native-base';
@@ -45,8 +47,8 @@ const items = [
 //   }
 // ]
 
-export default class Donate extends Component {
 
+export default class Donate extends Component {
   //added items and results
   constructor(props) {
     super(props);
@@ -66,20 +68,144 @@ export default class Donate extends Component {
     this.setState({ results });
   }
 
+  //function to handle pushing correct page to stack from clicking search results
   pressOrg(result) {
-    console.log("result:", result);
-    if(result === "Neighborhood Health Clinic") {
-      this.props.navigator.push({ 
-        id: 6
-      });
-    } else if (result === "Heart of Florida United Way") {
-      this.props.navigator.push({ 
-        id: 7
-      });
-    } else if (result === "United Way of Miami-Dade") {
-      this.props.navigator.push({ 
-        id: 8
-      });
+    switch(result) {
+      case 'Neighborhood Health Clinic':
+        this.props.navigator.push({ 
+          id: 6
+        });
+      break;
+      case 'Heart of Florida United Way':
+        this.props.navigator.push({ 
+          id: 7
+        });
+      break;
+      case 'United Way of Miami-Dade':
+        this.props.navigator.push({ 
+          id: 8
+        });
+      break;
+      case 'All Faiths Food Bank':
+        this.props.navigator.push({ 
+          id: 9
+        });
+      break;
+      case 'Second Harvest Food Bank of Central Florida':
+        this.props.navigator.push({ 
+          id: 10
+        });
+      break;
+      case 'Boys and Girls Club of Miami Dade':
+        this.props.navigator.push({ 
+          id: 11
+        });
+      break;
+      case 'Austin Humane Society':
+        this.props.navigator.push({ 
+          id: 12
+        });
+      break;
+      case 'Houston Food Bank':
+        this.props.navigator.push({ 
+          id: 13
+        });
+      break;
+      case 'San Antonio Food Bank':
+        this.props.navigator.push({ 
+          id: 14
+        });
+      break;
+      case 'Houston Habitat for Humanity':
+        this.props.navigator.push({ 
+          id: 15
+        });
+      break;
+      case 'Greater Baton Rouge Food Bank':
+        this.props.navigator.push({ 
+          id: 16
+        });
+      break;
+      case 'United Way of Central Louisiana':
+        this.props.navigator.push({ 
+          id: 17
+        });
+      break;
+      case 'United Way of Greater Houston':
+        this.props.navigator.push({ 
+          id: 18
+        });
+      break;
+      case 'ConPRmetidos':
+        this.props.navigator.push({ 
+          id: 19
+        });
+      break;
+      case 'United for Puerto Rico':
+        this.props.navigator.push({ 
+          id: 20
+        });
+      break;
+      case 'All Hands Volunteer':
+        this.props.navigator.push({ 
+          id: 21
+        });
+      break;
+      case 'Catholic Relief Services':
+        this.props.navigator.push({ 
+          id: 22
+        });
+      break;
+      case 'Direct Relief':
+        this.props.navigator.push({ 
+          id: 23
+        });
+      break;
+      case 'Episcopal Relief and Development':
+        this.props.navigator.push({ 
+          id: 24
+        });
+      break;
+      case 'United Methodist Committee on Relief':
+        this.props.navigator.push({ 
+          id: 25
+        });
+      break;
+      case 'PetSmart Charities':
+        this.props.navigator.push({ 
+          id: 26
+        });
+      break;
+      case 'Operation USA':
+        this.props.navigator.push({ 
+          id: 27
+        });
+      break;
+      case 'Save the Children':
+        this.props.navigator.push({ 
+          id: 28
+        });
+      break;
+      case 'UNICEF USA':
+        this.props.navigator.push({ 
+          id: 29
+        });
+      break;
+      case 'International Medical Corps':
+        this.props.navigator.push({ 
+          id: 30
+        });
+      break;
+      case 'Lutheran World Relief':
+        this.props.navigator.push({ 
+          id: 31
+        });
+      break;
+      case 'Partners in Health':
+        this.props.navigator.push({ 
+          id: 32
+        });
+      break;
     }
   }
 
@@ -255,8 +381,6 @@ export default class Donate extends Component {
   handlePress() {
     this.props.navigator.pop();
   } 
-
-
 
   render() {
 

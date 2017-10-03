@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
 import orgImg from '../org.jpg';
 
+//const url = 'http://www.neighborhoodhealthclinic.org/donate-now/';
+
 export default class Org2 extends Component {
+
+  // propTypes: {
+  //   url: React.propTypes.string,
+  // } 
+
+  handleClick() {
+    Linking.canOpenURL('http://www.neighborhoodhealthclinic.org/donate-now/').then(supported => {
+      if(supported) {
+        Linking.openURL('http://www.neighborhoodhealthclinic.org/donate-now/');
+      } else {
+        console.log('Cannot open: ' + 'http://www.neighborhoodhealthclinic.org/donate-now/');
+      }
+    });
+    // Linking.openURL('http://www.neighborhoodhealthclinic.org/donate-now/');
+  }
 
   constructor(props) {
     super(props);
@@ -61,14 +78,21 @@ export default class Org2 extends Component {
             <Text style={styles.text}>Focusing on four core areas — education, income, health and basic needs — Heart of Florida United Way serves Osceola, Orange, and Seminole Counties. They work collaboratively with community partners and other non-profits to create a positive and sustainable impact in Central Florida. They strategically invest in effective programs and services that solve complex issues, bettering the community for all.
             </Text>
 
-          <Text style={styles.bigLightText}>More Info</Text>
+            <View style={{flexDirection:'row', justifyContent:'center', marginTop: 20}}>
+              <TouchableOpacity onPress={this.handleClick} style={{width:250}}>
+                <View style={styles.donateButton}>
+                  <Text style={styles.donateButtonText}>Donate Here</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          
 
           {/*--------D3 INFO TO GO HERE---------*/}
  
           <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
             <TouchableOpacity onPress={this.handlePress} style={{width:100}}>
-              <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
-                <Text style={{color: 'rgb(12,65,123)', fontWeight: 'bold'}}>Go Back</Text>
+              <View style={styles.backButton}>
+                <Text style={styles.backButtonText}>Go Back</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -142,5 +166,27 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold'
+  },
+  backButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  backButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold'
+  },
+  donateButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  donateButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 20
   }
 });
