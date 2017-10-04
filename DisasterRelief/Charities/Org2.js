@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
-import orgImg from '../org.jpg';
+import orgImg from './img/org.jpg';
 
 export default class Org2 extends Component {
 
