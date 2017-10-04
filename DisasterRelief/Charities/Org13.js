@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
-import orgImg from '../org.jpg';
+import orgImg from '../img/united-way-houston.png';
 
 export default class Org13 extends Component {
 
@@ -119,6 +119,7 @@ const styles = StyleSheet.create({
     height: 150,
     width: 360,
     alignSelf: "center",
+    resizeMode: "contain",
     marginTop: (Platform.OS === 'ios') ? 10 : 0
   },
   bigInfoText: {

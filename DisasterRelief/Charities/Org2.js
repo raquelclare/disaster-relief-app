@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
-import orgImg from '../img/org.jpg';
+import orgImg from '../img/heart-of-florida.png';
 
 export default class Org2 extends Component {
 
@@ -14,7 +14,7 @@ export default class Org2 extends Component {
 
   //function to handle url click to donation page in browser
   handleClick() {
-    var url = 'http://www.neighborhoodhealthclinic.org/donate-now/';
+    var url = 'http://www.hfuw.org/';
 
     Linking.canOpenURL(url).then(supported => {
       if(supported) {
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
     height: 150,
     width: 360,
     alignSelf: "center",
+    resizeMode: "contain",
     marginTop: (Platform.OS === 'ios') ? 10 : 0
   },
   bigInfoText: {

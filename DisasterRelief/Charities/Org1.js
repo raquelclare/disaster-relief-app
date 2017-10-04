@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView } from 'react-native';
-import orgImg from '../org.jpg';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
+import orgImg from '../img/neighborhood-health-clinic.png';
 
 export default class Org1 extends Component {
 
@@ -21,6 +21,18 @@ export default class Org1 extends Component {
   // The handlePress function will return us to the previous page
   handlePress() {
     this.props.navigator.pop();
+  }
+
+  handleClick() {
+    var url = 'http://www.neighborhoodhealthclinic.org/donate-now/';
+
+    Linking.canOpenURL(url).then(supported => {
+      if(supported) {
+        Linking.openURL(url);
+      } else {
+        console.log('Cannot open: ' + url);
+      }
+    });
   }
 
   render() {
@@ -54,20 +66,24 @@ export default class Org1 extends Component {
             </View>*/}
           </View>
 
-          <Text style={styles.text}>The Neighborhood Health Clinic is a medical clinic for the working poor - conceived by Dr. Bill and Nancy Lascheid just two short months after they retired from their full-time Naples dermatology practice. The concept soon gained momentum and attracted supporters. With shared enthusiasm of friends, and help from professionals and volunteers in the community, the Clinic was able to open its doors in April 1999. 
+          <Text style={styles.text}>The Neighborhood Health Clinic is a medical clinic for the working poor - conceived by Dr. Bill and Nancy Lascheid just two short months after they retired from their full-time Naples dermatology practice. The concept soon gained momentum and attracted supporters. With shared enthusiasm of friends, and help from professionals and volunteers in the community, the Clinic was able to open its doors in April 1999.</Text> 
 
-With the ongoing support of more than 700 volunteers from doctors and nurses to dentists and dental hygienists to non-medical and office help, the Neighborhood Health Clinic is able to deliver quality medical care to low income, working but uninsured Collier County adults.
-</Text>
+          <Text style={styles.text}>With the ongoing support of more than 700 volunteers from doctors and nurses to dentists and dental hygienists to non-medical and office help, the Neighborhood Health Clinic is able to deliver quality medical care to low income, working but uninsured Collier County adults.</Text>
 
-          <Text style={styles.bigLightText}>More Info</Text>
-          <Text style={styles.bigLightText}>More Info</Text> 
+            <View style={{flexDirection:'row', justifyContent:'center', marginTop: 20}}>
+              <TouchableOpacity onPress={this.handleClick} style={{width:250}}>
+                <View style={styles.donateButton}>
+                  <Text style={styles.donateButtonText}>Donate Here</Text>
+                </View>
+              </TouchableOpacity>
+            </View> 
 
           {/*--------D3 INFO TO GO HERE---------*/}
  
           <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
             <TouchableOpacity onPress={this.handlePress} style={{width:100}}>
-              <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
-                <Text style={{color: 'rgb(12,65,123)', fontWeight: 'bold'}}>Go Back</Text>
+              <View style={styles.backButton}>
+                <Text style={styles.backButtonText}>Go Back</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -103,6 +119,7 @@ const styles = StyleSheet.create({
     height: 150,
     width: 360,
     alignSelf: "center",
+    resizeMode: "contain",
     marginTop: (Platform.OS === 'ios') ? 10 : 0
   },
   bigInfoText: {
@@ -115,6 +132,7 @@ const styles = StyleSheet.create({
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light'
   },
   bigLightText: {
+    marginTop: 20,
     color: 'white', 
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     fontSize:25, 
@@ -124,7 +142,6 @@ const styles = StyleSheet.create({
     marginLeft: 25,
     marginRight: 25,
     marginTop: 20,
-    marginBottom: 20,
     color: 'white',
     fontFamily: (Platform.OS === 'android') ? 'sans-serif-light' : 'Avenir-Light',
     textAlign: 'center'
@@ -135,10 +152,33 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgb(21,96,189)',
     height: 50,
+    marginTop: 30
   },
   title: {
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold'
+  },
+  backButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  backButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold'
+  },
+  donateButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  donateButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 20
   }
 });

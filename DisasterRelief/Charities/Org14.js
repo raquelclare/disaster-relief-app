@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
-import orgImg from '../org.jpg';
+import orgImg from '../img/conprmetidos.png';
 
 export default class Org14 extends Component {
 
@@ -122,8 +122,9 @@ const styles = StyleSheet.create({
   },
   imageStyle: {
     height: 150,
-    width: 360,
+    width: 300,
     alignSelf: "center",
+    resizeMode: "contain",
     marginTop: (Platform.OS === 'ios') ? 10 : 0
   },
   bigInfoText: {
