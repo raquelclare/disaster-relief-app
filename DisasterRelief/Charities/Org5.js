@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
 import orgImg from '../org.jpg';
 
 export default class Org5 extends Component {
@@ -10,6 +10,19 @@ export default class Org5 extends Component {
       loading: true
     };
     this.handlePress = this.handlePress.bind(this);
+  }
+
+  //function to handle url click to donation page in browser
+  handleClick() {
+    var url = 'https://secure3.convio.net/fbcf/site/Donation2;jsessionid=00000000.app338a?df_id=2660&2660.donation=form1&NONCE_TOKEN=4EF2C8B50ED92EE5365DDA4376559822';
+
+    Linking.canOpenURL(url).then(supported => {
+      if(supported) {
+        Linking.openURL(url);
+      } else {
+        console.log('Cannot open: ' + url);
+      }
+    });
   }
 
   // // When the component mounts..
@@ -56,14 +69,20 @@ export default class Org5 extends Component {
 
            <Text style={styles.text}>In addition to helping feed neighbors who need help, Second Harvest also transforms dozens of lives directly every year. Economically-challenged adults who graduate from their 14-week culinary training program are placed in ‘better than minimum wage’ jobs that set them and their families on a path to self-sustainability. Yet another important activity helps connect people who are eligible to receive SNAP food assistance benefits with the resources they need to access the program and get help.</Text>      
 
-          <Text style={styles.bigLightText}>More Info</Text>
+            <View style={{flexDirection:'row', justifyContent:'center', marginTop: 20}}>
+              <TouchableOpacity onPress={this.handleClick} style={{width:250}}>
+                <View style={styles.donateButton}>
+                  <Text style={styles.donateButtonText}>Donate Here</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
 
           {/*--------D3 INFO TO GO HERE---------*/}
  
           <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
             <TouchableOpacity onPress={this.handlePress} style={{width:100}}>
-              <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
-                <Text style={{color: 'rgb(12,65,123)', fontWeight: 'bold'}}>Go Back</Text>
+              <View style={styles.backButton}>
+                <Text style={styles.backButtonText}>Go Back</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -130,12 +149,34 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgb(21,96,189)',
-    height: 50,
+    height: 70,
     marginTop: 30
   },
   title: {
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold'
+  },
+  backButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  backButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold'
+  },
+  donateButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  donateButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 20
   }
 });

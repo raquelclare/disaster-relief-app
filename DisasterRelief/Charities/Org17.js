@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
 import orgImg from '../org.jpg';
 
 export default class Org17 extends Component {
@@ -21,6 +21,19 @@ export default class Org17 extends Component {
   // The handlePress function will return us to the previous page
   handlePress() {
     this.props.navigator.pop();
+  }
+
+  //function to handle url click to donation page in browser
+  handleClick() {
+    var url = 'https://support.crs.org/donate/help-where-its-needed-most?_ga=2.25036856.322069312.1507090650-1139848024.1506374676';
+
+    Linking.canOpenURL(url).then(supported => {
+      if(supported) {
+        Linking.openURL(url);
+      } else {
+        console.log('Cannot open: ' + url);
+      }
+    });
   }
 
   render() {
@@ -58,14 +71,20 @@ export default class Org17 extends Component {
 
            <Text style={styles.text}>Catholic Relief Services was founded in 1943 by the Catholic Bishops of the United States to serve World War II survivors in Europe. Since then, they have expanded in size to reach more than 120 million people in more than 100 countries on five continents. Although their mission is rooted in the Catholic faith, their operations serve people based solely on need, regardless of their race, religion, or ethnicity.</Text> 
 
-          <Text style={styles.bigLightText}>More Info</Text>
+            <View style={{flexDirection:'row', justifyContent:'center', marginTop: 20}}>
+              <TouchableOpacity onPress={this.handleClick} style={{width:250}}>
+                <View style={styles.donateButton}>
+                  <Text style={styles.donateButtonText}>Donate Here</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
 
           {/*--------D3 INFO TO GO HERE---------*/}
  
           <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
             <TouchableOpacity onPress={this.handlePress} style={{width:100}}>
-              <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
-                <Text style={{color: 'rgb(12,65,123)', fontWeight: 'bold'}}>Go Back</Text>
+              <View style={styles.backButton}>
+                <Text style={styles.backButtonText}>Go Back</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -139,5 +158,27 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold'
+  },
+  backButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  backButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold'
+  },
+  donateButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  donateButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 20
   }
 });

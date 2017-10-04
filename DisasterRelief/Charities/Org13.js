@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
 import orgImg from '../org.jpg';
 
 export default class Org13 extends Component {
@@ -21,6 +21,19 @@ export default class Org13 extends Component {
   // The handlePress function will return us to the previous page
   handlePress() {
     this.props.navigator.pop();
+  }
+
+  //function to handle url click to donation page in browser
+  handleClick() {
+    var url = 'https://www.unitedwayhouston.org/donate/';
+
+    Linking.canOpenURL(url).then(supported => {
+      if(supported) {
+        Linking.openURL(url);
+      } else {
+        console.log('Cannot open: ' + url);
+      }
+    });
   }
 
   render() {
@@ -57,14 +70,20 @@ export default class Org13 extends Component {
 
            <Text style={styles.text}>They support families and individuals when they are going through crises, like job loss, domestic violence, and natural disasters. They provide the tools, resources and education for families to achieve financial stability and independence, for children to succeed in school and in life, and for veterans to rebuild their lives after returning from service.</Text>       
 
-          <Text style={styles.bigLightText}>More Info</Text>
+            <View style={{flexDirection:'row', justifyContent:'center', marginTop: 20}}>
+              <TouchableOpacity onPress={this.handleClick} style={{width:250}}>
+                <View style={styles.donateButton}>
+                  <Text style={styles.donateButtonText}>Donate Here</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
 
           {/*--------D3 INFO TO GO HERE---------*/}
  
           <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
             <TouchableOpacity onPress={this.handlePress} style={{width:100}}>
-              <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
-                <Text style={{color: 'rgb(12,65,123)', fontWeight: 'bold'}}>Go Back</Text>
+              <View style={styles.backButton}>
+                <Text style={styles.backButtonText}>Go Back</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -138,5 +157,27 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold'
+  },
+  backButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  backButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold'
+  },
+  donateButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  donateButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 20
   }
 });

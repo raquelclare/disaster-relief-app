@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
 import orgImg from '../org.jpg';
 
 export default class Org22 extends Component {
@@ -21,6 +21,19 @@ export default class Org22 extends Component {
   // The handlePress function will return us to the previous page
   handlePress() {
     this.props.navigator.pop();
+  }
+
+  //function to handle url click to donation page in browser
+  handleClick() {
+    var url = 'https://give.opusa.org/checkout/donation?eid=34510';
+
+    Linking.canOpenURL(url).then(supported => {
+      if(supported) {
+        Linking.openURL(url);
+      } else {
+        console.log('Cannot open: ' + url);
+      }
+    });
   }
 
   render() {
@@ -60,14 +73,20 @@ export default class Org22 extends Component {
 
            <Text style={styles.text}>In most cases, the effects of disasters are not limited by time. Years after a disaster has abated, communities are still frequently in need of assistance. Committed to rebuilding, Operation USA stays in the field long after many others have left. Long-term projects help rebuild lives and livelihoods. Education may be the single most cost-effective kind of aid. It opens minds, builds futures and provides youths with the tools they need to succeed. Enhanced health care lengthens lives and transforms communities. Operation USA supports these life-changing programs so that children and families can recover, grow, and thrive in the wake of disasters.</Text>       
 
-          <Text style={styles.bigLightText}>More Info</Text>
+            <View style={{flexDirection:'row', justifyContent:'center', marginTop: 20}}>
+              <TouchableOpacity onPress={this.handleClick} style={{width:250}}>
+                <View style={styles.donateButton}>
+                  <Text style={styles.donateButtonText}>Donate Here</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
 
           {/*--------D3 INFO TO GO HERE---------*/}
  
           <View style={{flexDirection:'row', justifyContent:'center', margin: 40}}>
             <TouchableOpacity onPress={this.handlePress} style={{width:100}}>
-              <View style={{paddingVertical: 10, paddingHorizontal: 20, backgroundColor: 'white', borderRadius: 50}}>
-                <Text style={{color: 'rgb(12,65,123)', fontWeight: 'bold'}}>Go Back</Text>
+              <View style={styles.backButton}>
+                <Text style={styles.backButtonText}>Go Back</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -141,5 +160,27 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold'
+  },
+  backButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  backButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold'
+  },
+  donateButton: {
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
+    backgroundColor: 'white', 
+    borderRadius: 50
+  },
+  donateButtonText: {
+    color: 'rgb(12,65,123)', 
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 20
   }
 });

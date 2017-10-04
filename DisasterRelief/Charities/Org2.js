@@ -2,24 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, Platform, ScrollView, Linking } from 'react-native';
 import orgImg from '../org.jpg';
 
-//const url = 'http://www.neighborhoodhealthclinic.org/donate-now/';
-
 export default class Org2 extends Component {
-
-  // propTypes: {
-  //   url: React.propTypes.string,
-  // } 
-
-  handleClick() {
-    Linking.canOpenURL('http://www.neighborhoodhealthclinic.org/donate-now/').then(supported => {
-      if(supported) {
-        Linking.openURL('http://www.neighborhoodhealthclinic.org/donate-now/');
-      } else {
-        console.log('Cannot open: ' + 'http://www.neighborhoodhealthclinic.org/donate-now/');
-      }
-    });
-    // Linking.openURL('http://www.neighborhoodhealthclinic.org/donate-now/');
-  }
 
   constructor(props) {
     super(props);
@@ -27,6 +10,19 @@ export default class Org2 extends Component {
       loading: true
     };
     this.handlePress = this.handlePress.bind(this);
+  }
+
+  //function to handle url click to donation page in browser
+  handleClick() {
+    var url = 'http://www.neighborhoodhealthclinic.org/donate-now/';
+
+    Linking.canOpenURL(url).then(supported => {
+      if(supported) {
+        Linking.openURL(url);
+      } else {
+        console.log('Cannot open: ' + url);
+      }
+    });
   }
 
   // // When the component mounts..
